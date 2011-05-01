@@ -56,6 +56,14 @@ class TestBase32 < Test::Unit::TestCase
     assert_encode_and_decode('MFRGGZDF', 'abcde')
   end
 
+  def test_otp_pass
+    assert_encode_and_decode('wrn3pqx5', "\264[\267\302\375")
+  end
+
+  def test_otp_pass2
+    assert_encode_and_decode('uqxqvnqr', "\244/\n\266\021")
+  end
+
   def test_constitution_preamble
     plaintext =<<-EOT
       We the people of the United States, in order to form a more perfect union,
